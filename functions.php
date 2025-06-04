@@ -6,7 +6,8 @@
 */ 
 function edc_setup() {
 
-    //Menu de navegacion
+    //agregar varios Menus de navegacion
+    
     register_nav_menus( array(
         'menu_principal' => esc_html__('Menu Principal', 'escuelacocina'),
     ));
