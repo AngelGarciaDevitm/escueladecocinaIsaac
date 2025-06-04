@@ -1,4 +1,1 @@
-<?php
-
-
-echo "hola";
+<?php get_header(); ?>
