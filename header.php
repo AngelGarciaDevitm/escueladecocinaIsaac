@@ -11,8 +11,8 @@
             <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-4 col-8 mb-4 mb-md-0">
-                    <a href="index.html">
-                        <img src="img/logo.svg" class="img-fluid">
+                    <a href="<?php echo esc_url( home_url('/') ); ?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" class="img-fluid">
                     </a>
                 </div>
                 <div class="col-md-8">
