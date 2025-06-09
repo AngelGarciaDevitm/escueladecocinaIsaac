@@ -20,13 +20,12 @@
                         <button class="navbar-toggler mb-4" data-toggle="collapse" data-target="#nav_principal" aria-expanded="false" type="button">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-
                         <?php
                             $args = array(
-                                'menu_class' => 'nav nav-justified flex-column flex-md-row text-center',
+                                'menu_class' => 'nav nav-justified flex-column flex-md-row text-center justify-content-lg-end',
                                 'container_id' => 'nav_principal',
-                                'container_class' => 'collapse navbar-collapse justify-content-center',
-                                'them_location' => 'menu_principal'
+                                'container_class' => 'collapse navbar-collapse justify-content-center justify-content-lg-end text-uppercase',
+                                'theme_location' => 'menu_principal'
                             );
 
                             wp_nav_menu($args);
