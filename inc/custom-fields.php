@@ -79,4 +79,4 @@ function edc_campos_homepage() {
 		'id'   => $prefix . 'imagen_licenciatura',
 		'type' => 'file',
 	) );
-    }
+    }  
