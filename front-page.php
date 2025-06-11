@@ -1,33 +1,32 @@
 <?php get_header(); ?>
 
+    <?php while(have_posts()): the_post(); ?>
+
+
     <div class="container-fluid imagenes-principales">
         <div class="row imagen-superior imagen">
             <div class="col-md-6 bg-primary">
                 <div class="row justify-content-center align-items-center h-100">
                     <div class="col-sm-8 col-md-6">
                         <div class="contenido text-center text-light py-3">
-                            <h2 class="text-uppercase">20 años de experiencia</h2>
-                            <p>Nos respaldan, siempre ofertando los mejores cursos para principiantes y expertos</p>
+                           <?php echo get_post_meta( get_the_ID(), 'edc_homepage_texto_superior_1', true); ?>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 bg-vino"></div>
+            <div class="col-md-6 imagen-fondo" style="background-image:url(<?php echo get_post_meta( get_the_ID(), 'edc_homepage_imagen_superior_1', true); ?>);"></div> 
         </div><!--.row-->
         <div class="row imagen-inferior imagen">
             <div class="col-md-6 bg-secondary">
                 <div class="row justify-content-center align-items-center h-100">
                     <div class="col-sm-8 col-md-6">
                         <div class="contenido text-center py-3">
-                            <h2 class="text-uppercase">Sobre Nosotros</h2>
-                            <p>Donec dignissim tincidunt fermentum. Aenean hendrerit auctor vestibulum.</p>
-
-                            <p>Donec venenatis turpis at convallis sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                            <?php echo get_post_meta( get_the_ID(), 'edc_homepage_texto_superior_2', true); ?>                            
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 bg-comida"></div> 
+            <div class="col-md-6 imagen-fondo" style="background-image:url(<?php echo get_post_meta( get_the_ID(), 'edc_homepage_imagen_superior_2', true); ?>);"></div> 
         </div><!--.row-->
     </div><!--.container-->
 
@@ -215,6 +214,6 @@
             </div>
         </div>
     </div>
-
+<?php endwhile; ?>
 
 <?php get_footer(); ?>

@@ -61,4 +61,22 @@ function edc_campos_homepage() {
 		'id'   => $prefix . 'imagen_superior_2',
 		'type' => 'file',
 	) );
+
+	//Campos de licenciatura
+	$edc_campos_homepage->add_field( array(
+		'name'    => esc_html__( 'Texto licenciatura', 'cmb2' ),
+		'desc'    => esc_html__( 'Añada el texto para la licenciatura', 'cmb2' ),
+		'id'      => $prefix . 'texto_licenciatura',
+		'type'    => 'wysiwyg',
+		'options' => array(
+			'textarea_rows' => 5,
+		),
+	) );
+
+	$edc_campos_homepage->add_field( array(
+		'name' => esc_html__( 'Imagen Fondo Licenciatura', 'cmb2' ),
+		'desc' => esc_html__( 'Imagen de fondo para la licenciatura', 'cmb2' ),
+		'id'   => $prefix . 'imagen_licenciatura',
+		'type' => 'file',
+	) );
     }
