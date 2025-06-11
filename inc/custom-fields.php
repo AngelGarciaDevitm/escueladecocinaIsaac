@@ -28,11 +28,37 @@ function edc_campos_homepage() {
 		), // Specific post IDs to display this metabox
 	) );
 
-    $edc_campos_homepage->add_field( array(
-		'name' => esc_html__( 'Un texto', 'cmb2' ),
-		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_about_text',
-		'type' => 'text',
+	$edc_campos_homepage->add_field( array(
+		'name'    => esc_html__( 'Texto Superior 1', 'cmb2' ),
+		'desc'    => esc_html__( 'Texto para la parte superior del sitio web', 'cmb2' ),
+		'id'      => $prefix . 'texto_superior_1',
+		'type'    => 'wysiwyg',
+		'options' => array(
+			'textarea_rows' => 5,
+		),
 	) );
 
+	$edc_campos_homepage->add_field( array(
+		'name' => esc_html__( 'Imagen Hero 1', 'cmb2' ),
+		'desc' => esc_html__( 'Primera imagen para la parte superior', 'cmb2' ),
+		'id'   => $prefix . 'imagen_superior_1',
+		'type' => 'file',
+	) );
+
+	$edc_campos_homepage->add_field( array(
+		'name'    => esc_html__( 'Texto Superior 2', 'cmb2' ),
+		'desc'    => esc_html__( 'Texto para la parte superior del sitio web', 'cmb2' ),
+		'id'      => $prefix . 'texto_superior_2',
+		'type'    => 'wysiwyg',
+		'options' => array(
+			'textarea_rows' => 5,
+		),
+	) );
+
+	$edc_campos_homepage->add_field( array(
+		'name' => esc_html__( 'Imagen Hero 2', 'cmb2' ),
+		'desc' => esc_html__( 'Segunda imagen para la parte superior', 'cmb2' ),
+		'id'   => $prefix . 'imagen_superior_2',
+		'type' => 'file',
+	) );
     }
