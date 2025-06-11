@@ -2,6 +2,18 @@
 
 
 /*
+*Agregar CMB2
+*/
+
+require_once dirname(__FILE__) . '/cmb2.php';
+
+/*
+* Carga campos personalizados
+*/
+require_once dirname(__FILE__) . '/inc/custom-fields.php';
+
+
+/*
 *Funciones que se cargan al activar el theme
 */ 
 function edc_setup() {
