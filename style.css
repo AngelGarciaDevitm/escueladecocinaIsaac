@@ -62,7 +62,7 @@ p {
     width: 100%;
     height: 100px;
     margin: 0 auto;
-    background-image: url(../img/separador.png);
+    background-image: url(img/separador.png);
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -195,7 +195,6 @@ aside .card-footer a {
 
 /*footer*/
 .licenciatura {
-    background-image: url(../img/chef_bg.jpg);
     background-size: cover;
     background-position: center center;
 }

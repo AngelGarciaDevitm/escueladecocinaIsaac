@@ -210,9 +210,7 @@
                 <div class="col-md-8">
                     <div class="comtenido text-light text-center">
                         <p><?php echo get_post_meta( get_the_ID(), 'edc_homepage_texto_licenciatura', true); ?></p>
-                        <?php $contacto = get_page_by_title('Contacto');
-                        
-                        ?>
+                        <?php $contacto = get_page_by_title('Contacto');?>
                         <a href="<?php echo get_permalink($contacto->ID) ?>" class="btn btn-primary text-uppercase">Mas Informacion</a>
                     </div>
                 </div>
