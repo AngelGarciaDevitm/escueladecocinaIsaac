@@ -14,7 +14,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 imagen-fondo" style="background-image:url(<?php echo get_post_meta( get_the_ID(), 'edc_homepage_imagen_superior_1', true); ?>);"></div> 
+            <div class="col-md-6 imagen-fondo" style="background-image:url(<?php echo get_post_meta( get_the_ID(), 'edc_homepage_imagen_superior_1', true); ?>);"></div>
+            
+            
         </div><!--.row-->
         <div class="row imagen-inferior imagen">
             <div class="col-md-6 bg-secondary">
@@ -201,14 +203,17 @@
         </div>
     </section>
 
-    <div class="licenciatura">
+
+    <div class="licenciatura" style="background-image:url(<?php echo get_post_meta( get_the_ID(), 'edc_homepage_imagen_licenciatura', true); ?>);">
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-8">
                     <div class="comtenido text-light text-center">
-                        <h2>¿Quieres ser Chef?</h2>
-                        <p class="display-4">Estudia la licenciatura para convertirte en Chef con nosotros</p>
-                        <a href="contacto.html" class="btn btn-primary text-uppercase">Mas Informacion</a>
+                        <p><?php echo get_post_meta( get_the_ID(), 'edc_homepage_texto_licenciatura', true); ?></p>
+                        <?php $contacto = get_page_by_title('Contacto');
+                        
+                        ?>
+                        <a href="<?php echo get_permalink($contacto->ID) ?>" class="btn btn-primary text-uppercase">Mas Informacion</a>
                     </div>
                 </div>
             </div>
