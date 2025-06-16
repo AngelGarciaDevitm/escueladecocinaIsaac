@@ -1,5 +1,5 @@
 <?php get_header(); ?>
 
-<hi> hola</h1>
+<h1> hola desde page.php </h1>
 
 <?php get_footer();?>
