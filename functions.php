@@ -21,7 +21,9 @@ function edc_imagen_destacada($id) {
     $imagen = get_the_post_thumbnail_url($id, 'full');
 
     $html = '';
+    $clase = false;
     if($imagen) {
+        $clase = true;
         $html .= '<div class="container">';
         $html .=    '<div class="row imagen-destacada"></div>';
         $html .= '</div>';
@@ -38,7 +40,7 @@ function edc_imagen_destacada($id) {
         ";
         wp_add_inline_style('custom', $imagen_destacada_css);
     }
-    return $html;
+    return array($html, $clase);
 }
 
 /*

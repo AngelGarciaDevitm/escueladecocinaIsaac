@@ -107,11 +107,16 @@ body.home .clases {
     background-size: cover;
 }
 /*Nosotros */
-.contenido-nosotros {
-    margin-top: -5rem;
+.contenido-pagina {
     border: 1px solid #e1e1e1;
     position: relative;
     z-index: 100;
+}
+.destacada {
+    margin-top: -5rem;
+}
+.no-destacada {
+    margin-top: 0!important;
 }
 .nosotros .informacion h3 {
     font-weight: 300;
