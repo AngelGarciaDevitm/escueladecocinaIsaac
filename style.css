@@ -49,9 +49,10 @@ p {
 .nav-link:hover {
     color: #f46669;
 }
-.nav-link.active {
+.current_page_item,
+.current_page_item .nav-link {
     color: #f46669;
-    border-bottom: 2px solid #f46669;
+    border-bottom: 3px solid #f46669;
 }
 .bg-light {
     background-color: white!important;
