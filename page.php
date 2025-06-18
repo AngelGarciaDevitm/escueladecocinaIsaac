@@ -1,13 +1,8 @@
 <?php get_header(); ?>
 
     <?php while(have_posts()): the_post(); ?>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 imagen-destacada nosotros-bg">
-                    <?php the_post_thumbnail(); ?>
-                </div>
-            </div>
-        </div>
+        
+        <?php echo edc_imagen_destacada( get_the_ID() ); ?>
 
         <main class="container">
             <div class="row justify-content-center">

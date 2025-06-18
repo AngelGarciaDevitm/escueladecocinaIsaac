@@ -106,16 +106,6 @@ body.home .clases {
     height: 24rem;
     background-size: cover;
 }
-.nosotros-bg {
-    background-image: url(../img/principal1.jpg);
-}
-.clase-bg {
-    background-image: url(../img/1.jpg);
-}
-.contacto-bg {
-    background-image: url(../img/principal2.jpg);
-}
-
 /*Nosotros */
 .contenido-nosotros {
     margin-top: -5rem;
