@@ -67,7 +67,7 @@ p {
     background-position: center center;
 }
 .inverso::after {
-    background-image: url(../img/separador-inverso.png);
+    background-image: url(img/separador-inverso.png);
 }
 /*Home*/
 .imagen > div {

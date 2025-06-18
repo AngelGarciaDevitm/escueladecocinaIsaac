@@ -18,6 +18,8 @@ require_once dirname(__FILE__) . '/inc/custom-fields.php';
 */ 
 function edc_setup() {
 
+    add_theme_support('post-thumbnails');
+
     //agregar varios Menus de navegacion
     register_nav_menus( array(
         'menu_principal' => esc_html__('Menu Principal', 'escuelacocina'),

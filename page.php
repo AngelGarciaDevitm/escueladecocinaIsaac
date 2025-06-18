@@ -3,7 +3,9 @@
     <?php while(have_posts()): the_post(); ?>
         <div class="container">
             <div class="row">
-                <div class="col-12 imagen-destacada nosotros-bg"></div>
+                <div class="col-12 imagen-destacada nosotros-bg">
+                    <?php the_post_thumbnail(); ?>
+                </div>
             </div>
         </div>
 
