@@ -35,7 +35,7 @@ function edc_imagen_destacada($id) {
         //creamos el css para el custom
         $imagen_destacada_css = "
             .imagen-destacada {
-                background-image: url( { $imagen });
+                background-image: url( $imagen );
             }
         ";
         wp_add_inline_style('custom', $imagen_destacada_css);
