@@ -80,3 +80,64 @@ function edc_campos_homepage() {
 		'type' => 'file',
 	) );
     }  
+
+
+
+add_action( 'cmb2_admin_init', 'edc_seccion_nosotros' );
+/**
+ * Hook in and add a metabox to demonstrate repeatable grouped fields
+ */
+function edc_seccion_nosotros() {
+	$prefix = 'edc_group_';
+
+	/**
+	 * Repeatable Field Groups
+	 */
+	$edc_iconos = new_cmb2_box( array(
+		'id'           => 'yourprefix_group_metabox',
+		'title'        => esc_html__( 'Iconos con descripción', 'cmb2' ),
+		'object_types' => array( 'page' ),
+		'context'	   => 'normal',
+		'priority'     => 'high',
+		'show_names'   => 'true',
+		'show_on'      => array(
+			'key'      => 'page-template',
+			'value'    => 'page-iconos.php'
+		)
+	) );
+
+	// $group_field_id is the field id string, so in this case: 'yourprefix_group_demo'
+	$group_field_id = $edc_iconos->add_field( array(
+		'id'          => $prefix . 'nosotros',
+		'type'        => 'group',
+		'description' => esc_html__( 'Agregue opciones segun sea necesario', 'cmb2' ),
+		'options'     => array(
+			'group_title'    => esc_html__( 'Caracteristica {#}', 'cmb2' ), // {#} gets replaced by row number
+			'add_button'     => esc_html__( 'Agregar otro grupo', 'cmb2' ),
+			'remove_button'  => esc_html__( 'Eliminar', 'cmb2' ),
+			'sortable'       => true,
+			// 'closed'      => true, // true to have the groups closed by default
+		),
+	) );
+
+	$edc_iconos->add_group_field( $group_field_id, array(
+		'name'       => esc_html__( 'Titulo', 'cmb2' ),
+		'id'         => 'titulo_icono',
+		'type'       => 'text',
+	) );
+
+	$edc_iconos->add_group_field( $group_field_id, array(
+		'name'        => esc_html__( 'Descripción', 'cmb2' ),
+		'description' => esc_html__( 'Agregue una descripción a esta caracteristica', 'cmb2' ),
+		'id'          => 'desc_icono',
+		'type'        => 'textarea_small',
+	) );
+
+	$edc_iconos->add_group_field( $group_field_id, array(
+		'name' => esc_html__( 'Icono', 'cmb2' ),
+		'id'   => 'imagen_icono',
+		'type' => 'file',
+	) );
+
+
+}
