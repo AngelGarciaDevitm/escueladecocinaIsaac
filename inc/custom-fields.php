@@ -106,6 +106,13 @@ function edc_seccion_nosotros() {
 		)
 	) );
 
+	$edc_iconos->add_field( array(
+		'name' => esc_html__( 'Titulo Sección', 'cmb2' ),
+		'desc' => esc_html__( 'Añada un titulo para la seccion', 'cmb2' ),
+		'id'   => $prefix . 'titulo_iconos',
+		'type' => 'text',
+	) );
+
 	// $group_field_id is the field id string, so in this case: 'yourprefix_group_demo'
 	$group_field_id = $edc_iconos->add_field( array(
 		'id'          => $prefix . 'nosotros',
