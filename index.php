@@ -29,16 +29,9 @@
                             <a href="entrada.html">
                                 <h3><?php the_title(); ?></h3>
                             </a>
-                            <div class="meta pt-2 pt-md-0">
-                                <p class="m-0">
-                                    Escrito el: <span><?php the_time( get_option('date_format') ); ?>
-                                             </span> 
-                                     por 
-                                     <a href="<?php 
-                                                echo get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename') ); ?>" ><?php the_author(); ?>
-                                    </a>
-                                </p>
-                            </div>
+                            <!--Informavion Meta de la entrada -->
+                            <?php get_template_part('template-parts/meta', 'post'); ?>
+                            
                             <p> <?php the_excerpt(); ?> </p>
                             <a href="<?php the_permalink(); ?>" class="btn btn-primary text-light">Ver Entrada</a>
                         </div><!--contenido entrada-->

@@ -48,6 +48,9 @@ function edc_imagen_destacada($id) {
 */ 
 function edc_setup() {
 
+    //definir tamaños de imagenes
+    add_image_size('mediano', 510, 340, true);
+
     add_theme_support('post-thumbnails');
 
     //agregar varios Menus de navegacion
