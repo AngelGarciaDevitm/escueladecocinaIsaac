@@ -4,7 +4,7 @@
     </div>
     <div class="col-md-8">
         <h2 class="text-center my-4">Comentarios</h2>
-        <ul class="lista-comentarios alert">
+        <ul class="lista-comentarios alert list-unstyled">
             <?php 
                 $comentarios = get_comments(array(
                     'post_id' => $post->ID,

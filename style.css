@@ -159,7 +159,73 @@ blockquote.subtitulo {
     color: #ffffff!important;
 }
 /*Comentarios*/
-*/
+.comment-respond a {
+    color:#f46669;
+}
+.comment-body {
+    background-color: #c7c57d;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.comment-body a {
+    color: black;
+}
+.comment-body a:hover {
+    color: #dc4747;
+}
+.comment-reply-title {
+    text-align: center;
+}
+.comment-form-comment label {
+    width: 100%;
+    font-weight: bold;
+}
+.comment-form-comment textarea {
+    width: 100%;
+}
+.comment-respond .submit {
+    background-color: #f46669;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    padding: .5rem;
+    transition: background-color .3s ease-in;
+    width: 100%;
+}
+.comment-respond .submit:hover {
+    background-color: #dc4747;
+    cursor: pointer;
+}
+#respond form > p {
+    display: flex;
+    flex-wrap: wrap;
+}
+#respond form > p label {
+    flex: 0 0 200px;
+    font-weight: bold;
+}
+#respond form > p input {
+    flex: 1;
+}
+.comment-form-cookies-consent {
+    display: none;
+    font-size: 15px;
+}
+input[type="checkbox"] {
+  width: 50px;
+  height: 50px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+.comentarios-cerrados.alert-danger {
+    background-color: #f46669;
+    color: white;
+}
+.required-field-message {
+    display: none;
+}
+
 /*sidebar*/
 aside a,
 aside a:hover {

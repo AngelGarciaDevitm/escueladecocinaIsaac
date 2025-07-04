@@ -7,10 +7,10 @@
 
         <div class="comentarios container">
             <?php
-                if( comments_open() || get_comments_number() ):
+                if( comments_open() ):
                     comments_template();
                 else:
-                    echo "<p class='text-center comentarios-cerrados'>Los comentarios estan cerrados</p>";
+                    echo "<p class='text-center comentarios-cerrados alert alert-danger'>Los comentarios estan cerrados</p>";
                 endif;
 
             ?>
