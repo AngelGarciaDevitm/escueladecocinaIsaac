@@ -4,7 +4,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <blockquote class="subtitulo text-center pl-3">
-                    Recetas, Recomendaciones y Tips para Chef's Profesionales o Novatos
+                    <?php 
+                        $id_blog = get_option('page_for_posts');
+                        echo get_post_meta($id_blog, 'edc_blog_slogan_blog', true);
+                    ?>
                 </blockquote>
             </div>
         </div>
