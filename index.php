@@ -45,6 +45,26 @@
                     </div>
                 </div><!--.row-->
                 <?php endwhile; ?>
+
+                <ul class="pagination pagination-lg justify-content-center mt-5">
+                    <li class="page-item">
+                        <?php
+                            previous_posts_link('
+                                <span class="page-link" aria-hidden="true">&laquo;Anterior</span>
+                                <span class="sr-only">Anteriores</span>
+                            ');
+                        ?>
+                    </li>
+
+                    <li class="page-item">
+                        <?php
+                            next_posts_link('
+                                <span class="page-link" aria-hidden="true">Siguiente&raquo;</span>
+                                <span class="sr-only">Anteriores</span>
+                            ');
+                        ?>
+                    </li>
+                </ul>
             </main>
 
             <?php get_sidebar(); ?> 

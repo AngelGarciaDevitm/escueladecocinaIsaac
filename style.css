@@ -149,6 +149,15 @@ blockquote.subtitulo {
 .text-light {
     color: white!important;
 }
+.page-link,
+.page-item a {
+    color: #3c1213!important;
+    text-decoration: none!important;
+}
+.page-link:hover {
+    background-color: #f46669;
+    color: #ffffff!important;
+}
 /*sidebar*/
 aside a,
 aside a:hover {
