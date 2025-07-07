@@ -8,6 +8,9 @@
 * Text Domain: escuelacocina
 */
 
+
+
+
 :root {
     --primario: #f46669;
     --secundario: #c7c57d;
@@ -23,7 +26,9 @@ p {
     line-height: 2rem;
     font-size: 1rem;
 }
-
+.card-img-top {
+    height: auto;
+}
 .bg-primary,
 .list-group-item-primary,
 .btn-primary { 
