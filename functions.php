@@ -12,6 +12,12 @@ require_once dirname(__FILE__) . '/inc/posttypes.php';
 require_once dirname(__FILE__) . '/cmb2.php';
 
 /*
+*Querires reutilizables
+*/
+
+require_once dirname(__FILE__) . '/inc/queries.php';
+
+/*
 * Carga campos personalizados
 */
 require_once dirname(__FILE__) . '/inc/custom-fields.php';
