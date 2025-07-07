@@ -287,4 +287,17 @@ function edc_campos_clases() {
 		'repeatable' => true,
 	) );
 
+	$edc_campos_cursos->add_field( array(
+		'name' => esc_html__( 'Chef instructor del curso', 'cmb2' ),
+		'desc' => esc_html__( 'Seleccione el chef que impartira el curso', 'cmb2' ),
+		'id'   => $prefix . 'chef',
+		'limit' => 10,
+		'type' => 'post_search_ajax',
+		'query_args'	=> array(
+			'post_type'			=> array( 'chefs' ),
+			'post_status'		=> array( 'publish' ),
+			'posts_per_page'	=> -1
+		)
+	) );
+
 }
