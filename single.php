@@ -7,6 +7,12 @@
 
         <div class="comentarios container">
             <?php
+            if('post' === get_post_type()) {
+                echo "si";
+            }
+            else {
+                echo "no";
+            }
                 if( comments_open() ):
                     comments_template();
                 else:

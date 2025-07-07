@@ -113,7 +113,7 @@ body.home .clases {
     background-size: cover;
 }
 /*Nosotros */
-.contenido-pagina {
+.contenedor-principal {
     border: 1px solid #e1e1e1;
     position: relative;
     z-index: 100;
