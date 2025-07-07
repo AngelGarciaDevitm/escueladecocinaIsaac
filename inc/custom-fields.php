@@ -231,4 +231,60 @@ function edc_campos_clases() {
 		// 'date_format' => 'Y-m-d',
 	) );
 
+	$edc_campos_cursos->add_field( array(
+		'name' => esc_html__( 'Fecha de fin de curso', 'cmb2' ),
+		'desc' => esc_html__( 'Añada la fecha de fin de Curso', 'cmb2' ),
+		'id'   => $prefix . 'fecha_fin_curso',
+		'type' => 'text_date',
+		// 'date_format' => 'Y-m-d',
+	) );
+
+	$edc_campos_cursos->add_field( array(
+		'name' => esc_html__( 'Hora de inicio de clases', 'cmb2' ),
+		'desc' => esc_html__( 'Añada la hora', 'cmb2' ),
+		'id'   => $prefix . 'hora_inicio_clase',
+		'type' => 'text_time',
+		// 'time_format' => 'H:i', // Set to 24hr format
+	) );
+
+	$edc_campos_cursos->add_field( array(
+		'name' => esc_html__( 'Hora de fin de clases', 'cmb2' ),
+		'desc' => esc_html__( 'Añada la hora', 'cmb2' ),
+		'id'   => $prefix . 'hora_fin_clase',
+		'type' => 'text_time',
+		// 'time_format' => 'H:i', // Set to 24hr format
+	) );
+
+	//Añadir informacion sobre cupos, precio, etc
+	$edc_campos_cursos->add_field( array(
+		'name'     => esc_html__( 'Informacion extra del curso', 'cmb2' ),
+		'desc'     => esc_html__( 'Añada cupo, precio, instructor en esta seccion', 'cmb2' ),
+		'id'       => $prefix . 'bloque',
+		'type'     => 'title',
+	) );
+
+	$edc_campos_cursos->add_field( array(
+		'name' => esc_html__( 'Precio del curso', 'cmb2' ),
+		'desc' => esc_html__( 'Añada el precio del curso', 'cmb2' ),
+		'id'   => $prefix . 'costo',
+		'type' => 'text_money',
+		// 'before_field' => '£', // override '$' symbol if needed
+		// 'repeatable' => true,
+	) );
+
+	$edc_campos_cursos->add_field( array(
+		'name' => esc_html__( 'Cupo', 'cmb2' ),
+		'desc' => esc_html__( 'Cupo para elcurso', 'cmb2' ),
+		'id'   => $prefix . 'cupo',
+		'type' => 'text',
+	) );
+	
+	$edc_campos_cursos->add_field( array(
+		'name' => esc_html__( '¿Que incluye el curso?', 'cmb2' ),
+		'desc' => esc_html__( 'Añada lo que incluye el curso (1 por linea)', 'cmb2' ),
+		'id'   => $prefix . 'incluye',
+		'type' => 'text',
+		'repeatable' => true,
+	) );
+
 }
