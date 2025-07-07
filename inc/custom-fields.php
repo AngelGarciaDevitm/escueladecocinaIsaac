@@ -229,6 +229,7 @@ function edc_campos_clases() {
 		'id'   => $prefix . 'fecha_inicio_curso',
 		'type' => 'text_date',
 		// 'date_format' => 'Y-m-d',
+		'column' => true,
 	) );
 
 	$edc_campos_cursos->add_field( array(
@@ -237,6 +238,7 @@ function edc_campos_clases() {
 		'id'   => $prefix . 'fecha_fin_curso',
 		'type' => 'text_date',
 		// 'date_format' => 'Y-m-d',
+		'column' => true,
 	) );
 
 	$edc_campos_cursos->add_field( array(
@@ -245,6 +247,7 @@ function edc_campos_clases() {
 		'id'   => $prefix . 'hora_inicio_clase',
 		'type' => 'text_time',
 		// 'time_format' => 'H:i', // Set to 24hr format
+		'column' => true,
 	) );
 
 	$edc_campos_cursos->add_field( array(
@@ -270,6 +273,7 @@ function edc_campos_clases() {
 		'type' => 'text_money',
 		// 'before_field' => '£', // override '$' symbol if needed
 		// 'repeatable' => true,
+		'column' => true,
 	) );
 
 	$edc_campos_cursos->add_field( array(
