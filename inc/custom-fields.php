@@ -179,3 +179,56 @@ function edc_campos_blog() {
 		'type' => 'text',
 	) );
 }
+
+//Añade campos al post type de Clases
+add_action( 'cmb2_admin_init', 'edc_campos_clases' );
+/**
+ * Hook in and add a metabox to demonstrate repeatable grouped fields
+ */
+function edc_campos_clases() {
+	$prefix = 'edc_cursos_';
+
+	/**
+	 * Repeatable Field Groups
+	 */
+	$edc_campos_cursos = new_cmb2_box( array(
+		'id'           => $prefix . 'metabox',
+		'title'        => esc_html__( 'Informacion de clases y cursos', 'cmb2' ),
+		'object_types' => array( 'clases_cocina' ),
+		'context'	   => 'normal',
+		'priority'     => 'high',
+		'show_names'   => 'true',
+	) );
+
+	$edc_campos_cursos->add_field( array(
+		'name' => esc_html__( 'Subtitulo del curso', 'cmb2' ),
+		'desc' => esc_html__( 'Añada un subtitulo para el curso', 'cmb2' ),
+		'id'   => $prefix . 'subtitulo',
+		'type' => 'text',
+	) );
+
+	//Horas y dias
+
+	$edc_campos_cursos->add_field( array(
+		'name'     => esc_html__( 'Informacion sobre la fecha y horarios del curso', 'cmb2' ),
+		'desc'     => esc_html__( 'Añada informacion relacionada a fechas, dias y horas para el curso', 'cmb2' ),
+		'id'       => $prefix . 'info',
+		'type'     => 'title',
+	) );
+ 
+	$edc_campos_cursos->add_field( array(
+		'name' => esc_html__( 'Indicaciones de los dias', 'cmb2' ),
+		'desc' => esc_html__( 'Añada las indicaciones de los dias eje: Todos los sabados', 'cmb2' ),
+		'id'   => $prefix . 'indicaciones',
+		'type' => 'text',
+	) );
+
+	$edc_campos_cursos->add_field( array(
+		'name' => esc_html__( 'Fecha de inicio de curso', 'cmb2' ),
+		'desc' => esc_html__( 'Añada la fecha de inicio de Curso', 'cmb2' ),
+		'id'   => $prefix . 'fecha_inicio_curso',
+		'type' => 'text_date',
+		// 'date_format' => 'Y-m-d',
+	) );
+
+}
