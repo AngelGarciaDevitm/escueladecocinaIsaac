@@ -97,3 +97,12 @@ function edc_scripts() {
     wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array('popper'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'edc_scripts' );
+
+//Agrega un mensaje personalizado a la pagina en el admin 
+ add_filter('display_post_states', 'edc_cambiar_estado', 10, 2 );
+ function edc_cambiar_estado($states, $post) {
+    if( ('page' === get_post_type($post->ID) ) && ('page-clases.php' === get_page_template_slug($post->ID)) ) {
+        $states[] = __('Pagina de Clases <a href="post-new.php?post_type=clases_cocina">Agregar Nueva clase</a>');
+    }
+    return $states;
+ }
