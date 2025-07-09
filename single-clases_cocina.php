@@ -36,14 +36,15 @@
                             Costo: $ <?php echo esc_html(number_format(floatval($total), 2, ".", ",")); ?>
                         </li>
                         <li class="list-group-item list-group-item-primary text-light">
-                            Fecha Inicio: 20 / 10 / 2018
+                            Fecha Inicio: <?php echo esc_html(get_post_meta(get_the_ID(), 'edc_cursos_fecha_inicio_curso', true)); ?>
+                             -- Fecha Fin: <?php echo esc_html(get_post_meta(get_the_ID(), 'edc_cursos_fecha_fin_curso', true)); ?>
                         </li>
                         <li class="list-group-item list-group-item-primary text-light">
-                            Horario: 18:00 - 20:00 horas
+                            Horario: <?php echo esc_html(get_post_meta(get_the_ID(), 'edc_cursos_hora_inicio_clase', true))
+                            . " - " .   esc_html(get_post_meta(get_the_ID(), 'edc_cursos_hora_fin_clase', true)); ?>
                         </li>
                         <li class="list-group-item list-group-item-primary text-light">
-                            Duración: 8 Semanas / 2 Horas cada Sábado
-                        </li>
+                            Duración: <?php echo esc_html(get_post_meta(get_the_ID(), 'edc_cursos_indicaciones', true)); ?>
                 </ul>
             </div>
             <div class="col-md-6 text-center">
