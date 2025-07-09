@@ -124,6 +124,7 @@ body.home .clases {
 }
 .no-destacada {
     margin-top: 0!important;
+    border: none;
 }
 .nosotros .informacion h3 {
     font-weight: 300;
