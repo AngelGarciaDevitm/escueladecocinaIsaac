@@ -107,3 +107,21 @@ add_action('wp_enqueue_scripts', 'edc_scripts' );
     }
     return $states;
  }
+
+ //soporte a widgets
+ add_action('widgets_init', 'edc_widgets_sidebar');
+ function edc_widgets_sidebar() {
+    register_sidebar(array(
+        'name'          => 'Widget Lateral',
+        'id'            => 'sidebar_widget',
+        'before_widget' => '<div class="widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="text-center text-light separador inverso">',
+        'after_title'   => '</h2>',
+
+    ));
+ }
+
+// Deshabilitar el editor de bloques de widgets
+add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
+add_filter( 'use_widgets_block_editor', '__return_false' );
