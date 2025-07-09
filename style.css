@@ -26,6 +26,10 @@ p {
     line-height: 2rem;
     font-size: 1rem;
 }
+.wpcf7-form-control-wrap,
+.from-group label {
+    width: 100%;
+}
 .card-img-top {
     height: auto;
     width: 100;
