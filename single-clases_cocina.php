@@ -3,26 +3,47 @@
     <?php while(have_posts()): the_post();?>
 
 
-        <?php get_template_part('template-parts/contenido', 'posts'); ?>
+        <?php get_template_part('template-parts/contenido', 'posts'); 
+        
+        printf( '<pre>%s</pre>', var_export( get_post_custom( get_the_ID() ), true) );
+        ?>
 
        <div class="container">
         <div class="row justify-content-center mt-5">
             <div class="col-md-6">
                 <h2 class="separador text-center my-3">¿Que Incluye?</h2>
+
                 <ul class="list-group">
-                    <li class="list-group-item list-group-item-secondary text-light">Todos los Ingredientes</li>
-                    <li class="list-group-item list-group-item-secondary text-light">Mesas de Trabajo Individuales</li>
-                    <li class="list-group-item list-group-item-secondary text-light">Recetario</li>
-                    <li class="list-group-item list-group-item-secondary text-light">Reconocimiento por Completar el curso</li>
+                    <?php 
+                        $lista_incluye = get_post_meta(get_the_ID(), 'edc_cursos_incluye', true);
+                        foreach($lista_incluye as $incluye): ?>
+                             <li class="list-group-item list-group-item-secondary text-light">
+                                <?php echo esc_html($incluye); ?>
+                            </li>
+                        <?php endforeach; ?>
                 </ul>
+
 
                 <h2 class="separador text-center my-3 mt-5 ">Información Extra</h2>
                 <ul class="list-group">
-                    <li class="list-group-item list-group-item-primary text-light">20 Cupos Disponibles</li>
-                    <li class="list-group-item list-group-item-primary text-light">Costo: $300</li>
-                    <li class="list-group-item list-group-item-primary text-light">Fecha Inicio: 20 / 10 / 2018</li>
-                    <li class="list-group-item list-group-item-primary text-light">Horario: 18:00 - 20:00 horas</li>
-                    <li class="list-group-item list-group-item-primary text-light">Duración: 8 Semanas / 2 Horas cada Sábado</li>
+                    <li class="list-group-item list-group-item-primary text-light">
+                        <?php echo esc_html(get_post_meta(get_the_ID(), 'edc_cursos_cupo', true)); ?>
+
+                        Cupos Disponibles
+                    </li>
+                    <li class="list-group-item list-group-item-primary text-light">
+                        <?php $total = get_post_meta(get_the_ID(), 'edc_cursos_costo', true); ?>
+                            Costo: $ <?php echo esc_html(number_format(floatval($total), 2, ".", ",")); ?>
+                        </li>
+                        <li class="list-group-item list-group-item-primary text-light">
+                            Fecha Inicio: 20 / 10 / 2018
+                        </li>
+                        <li class="list-group-item list-group-item-primary text-light">
+                            Horario: 18:00 - 20:00 horas
+                        </li>
+                        <li class="list-group-item list-group-item-primary text-light">
+                            Duración: 8 Semanas / 2 Horas cada Sábado
+                        </li>
                 </ul>
             </div>
             <div class="col-md-6 text-center">

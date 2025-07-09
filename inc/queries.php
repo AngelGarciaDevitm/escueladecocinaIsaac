@@ -34,7 +34,7 @@ function edc_query_cursos($cantidad = -1) {
                     </p>
                 </div>
 
-                <span class="badge badge-secondary p-2">$ <? echo money_format('%i', $costo); ?></span> 
+                <span class="badge badge-secondary p-2">$ <? echo (number_format(floatva($costo), 2, ".", ",")); ?></span> 
         </div><!--.card-->
         <div class="card-body">
             <h3 class="card-title"><?php the_title(); ?></h3>
