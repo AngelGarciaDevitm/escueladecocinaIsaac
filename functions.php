@@ -60,6 +60,7 @@ function edc_setup() {
 
     //definir tamaños de imagenes
     add_image_size('mediano', 510, 340, true);
+    add_image_size('cuadrada_mediana', 350, 350, true);
 
     add_theme_support('post-thumbnails');
 

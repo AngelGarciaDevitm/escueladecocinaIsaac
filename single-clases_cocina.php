@@ -5,7 +5,7 @@
 
         <?php get_template_part('template-parts/contenido', 'posts'); 
         
-        printf( '<pre>%s</pre>', var_export( get_post_custom( get_the_ID() ), true) );
+        //printf( '<pre>%s</pre>', var_export( get_post_custom( get_the_ID() ), true) );
         ?>
 
        <div class="container">
@@ -50,17 +50,29 @@
             <div class="col-md-6 text-center">
                 <h2 class="separador text-center mt-5 my-md-3">Imparte</h2>
 
-                <div class="row justify-content-center ">
-                    <div class="col-md-7">
-                        <img src="img/instructor.jpg" class="img-fluid rounded-circle mb-4 ">
-                    </div>
-                </div>
-                <p class="instructor"> Isabelle De la torre 
+                <?php $instructor_ID = get_post_meta(get_the_ID(), 'edc_cursos_chef', true);
 
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae quo culpa dignissimos, veritatis eveniet similique fugit cumque temporibus commodi, modi inventore non officia perferendis ratione odit nisi provident natus eum?
-                </p>
+                            $args = array( 
+                                'post_type' =>  'chefs',
+                                'post__in'  => $instructor_ID,
+                                'posts_per_page' => 5,
+                            );
+
+                            $instructor = new WP_Query($args);    
+
+                            while($instructor->have_posts()): $instructor->the_post();
+                ?>
+                <div>
+                    <div class="row justify-content-center mb-4">
+                        <div class="col-md-7">
+                            <?php the_post_thumbnail('cuadrada_mediana', array('class' => 'img-fluid rounded-circle mb-4')) ?>
+                        </div>
+                    </div>
+                    <p class="instructor"> <?php the_title(); ?> </p>
+                    <?php the_content(); ?>
+                </div>
+
+                <?php endwhile; wp_reset_postdata(); ?>
             </div>
         </div>
        </div>
