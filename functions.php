@@ -3,6 +3,11 @@
 /**
  * Agrega los post types de instructores y clases
  */
+require_once dirname(__FILE__) . '/inc/widgets.php';
+
+/**
+ * Agrega los post types de instructores y clases
+ */
 require_once dirname(__FILE__) . '/inc/posttypes.php';
 
 /*
