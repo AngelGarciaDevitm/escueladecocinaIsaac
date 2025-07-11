@@ -20,7 +20,7 @@ function edc_opciones_theme() {
 		 * Several of these parameters are passed along to add_menu_page()/add_submenu_page().
 		 */
 
-		'option_key'      => 'yourprefix_theme_options', // The option key and admin menu page slug.
+		'option_key'      => 'edc_theme_options', // The option key and admin menu page slug.
 		'icon_url'        => 'dashicons-edit', // Menu icon. Only applicable if 'parent_slug' is left empty.
 		) );
 
@@ -30,11 +30,32 @@ function edc_opciones_theme() {
 	 * Prefix is not needed.
 	 */
 	$cmb_options->add_field( array(
-		'name'    => esc_html__( 'Site Background Color', 'cmb2' ),
-		'desc'    => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'      => 'bg_color',
+		'name'    => esc_html__( 'Color del sitio primario', 'cmb2' ),
+		'desc'    => esc_html__( 'Añada un color Primario para el sitio web (enlaces, botones, textos)', 'cmb2' ),
+		'id'      => 'color_primario',
 		'type'    => 'colorpicker',
 		'default' => '#ffffff',
 	) );
 
+    $cmb_options->add_field( array(
+		'name'    => esc_html__( 'Color del sitio secundario', 'cmb2' ),
+		'desc'    => esc_html__( 'Añada un color Secundario para el sitio web (enlaces, botones, textos)', 'cmb2' ),
+		'id'      => 'color_secundario',
+		'type'    => 'colorpicker',
+		'default' => '#ffffff',
+	) );
+
+    $cmb_options->add_field( array(
+		'name'    => esc_html__( 'Logotipo' ),
+		'desc'    => esc_html__( 'Cargue una imagen para el logotipo', 'cmb2' ),
+		'id'      => 'logotipo',
+		'type'    => 'file',
+	) );
+
+    $cmb_options->add_field( array(
+		'name'    => esc_html__( 'Separador' ),
+		'desc'    => esc_html__( 'Cargue una imagen para el separador', 'cmb2' ),
+		'id'      => 'separador',
+		'type'    => 'file',
+	) );
 }
