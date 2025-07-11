@@ -53,7 +53,7 @@
                     $clases = 3;
                 }
                 
-                edc_query_cursos($clases); ?>
+                edc_query_cursos( $clases ); ?>
             </div>
             <div class="row justify-content-end">
                 <div class="col-sm-5 col-md-3">

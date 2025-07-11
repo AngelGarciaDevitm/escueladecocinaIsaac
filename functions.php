@@ -73,6 +73,7 @@ function edc_setup() {
     add_image_size('cuadrada_mediana', 350, 350, true);
 
     add_theme_support('post-thumbnails');
+    add_theme_support('title-tag');
 
     //agregar varios Menus de navegacion
     register_nav_menus( array(
