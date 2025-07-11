@@ -34,7 +34,7 @@ function edc_opciones_theme() {
 		'desc'    => esc_html__( 'Añada un color Primario para el sitio web (enlaces, botones, textos)', 'cmb2' ),
 		'id'      => 'color_primario',
 		'type'    => 'colorpicker',
-		'default' => '#ffffff',
+		'default' => '#f46669',
 	) );
 
     $cmb_options->add_field( array(
@@ -42,7 +42,7 @@ function edc_opciones_theme() {
 		'desc'    => esc_html__( 'Añada un color Secundario para el sitio web (enlaces, botones, textos)', 'cmb2' ),
 		'id'      => 'color_secundario',
 		'type'    => 'colorpicker',
-		'default' => '#ffffff',
+		'default' => '#c7c57d',
 	) );
 
     $cmb_options->add_field( array(
