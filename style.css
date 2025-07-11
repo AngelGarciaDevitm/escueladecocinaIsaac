@@ -34,6 +34,9 @@ p {
     height: auto;
     width: 100;
 }
+.entrada .btn-primary {
+    color: white!important;
+}
 .bg-primary,
 .list-group-item-primary,
 .btn-primary { 
@@ -77,8 +80,8 @@ p {
     background-repeat: no-repeat;
     background-position: center center;
 }
-.inverso::after {
-    background-image: url(img/separador-inverso.png);
+.separador.inverso::after {
+    background-image: url(img/separador-inverso.png)!important;
 }
 /*Home*/
 .imagen > div {

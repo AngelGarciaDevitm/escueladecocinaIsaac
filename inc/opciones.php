@@ -59,3 +59,70 @@ function edc_opciones_theme() {
 		'type'    => 'file',
 	) );
 }
+
+add_action('wp_footer', 'edc_estilos_opciones');
+function edc_estilos_opciones() {
+    $opciones = get_option('edc_theme_options');
+
+    $color_primario = $opciones['color_primario'];
+    $color_secundario = $opciones['color_secundario'];
+    $separador = $opciones['separador'];
+
+    if(!isset($separador)) {
+        $separador = get_template_directory_uri() . '/img/separador.png';
+    }
+
+    wp_register_style('custom-opciones', false);
+    wp_enqueue_style('opciones');
+
+    $custom_css = "
+        /** Bg color primario **/
+        .btn-primary,
+        .bg-primary,
+        .alert-primary,
+        .list-group-item-primary,
+        .comment-respond .submit,
+        .page-link:hover {
+            background-color: {$color_primario}!important;
+        }
+            
+        /** Color primario **/
+
+        .card-subtitle,
+        .nav-link:hover,
+        .current_page_item .nav-link,
+        .contenido-entrada .meta span,
+        .entrada a,
+        .instructor,
+        .comment-respond a,
+        .comentarios-cerrados,
+        .page-link {
+            color: {$color_primario}!important;
+        }
+        
+        /** border  primario **/
+        .current_page_item .nav-link,
+        blockquote.subtitulo,
+        .btn-primary,
+        footer {
+            border-color: {$color_primario}!important;
+        }
+
+        aside .card_meta,
+        .badge-secondary,
+        .bg-secondary,
+        .alert-secondary,
+        .list-group-item-secondary,
+        aside .card-footer,
+        .comment-body  {
+            background-color: {$color_secundario} !important;
+        }
+        
+        /*** Separador **/
+        .separador::after {
+            background-image: url( {$separador} ) !important;
+        }
+    ";
+
+    wp_add_inline_style('custom-opciones', $custom_css);
+}
