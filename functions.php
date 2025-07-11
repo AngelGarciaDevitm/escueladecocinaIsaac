@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Agrega los post types de instructores y clases
+ * Crea un widgt con los proximos cursos|
  */
 require_once dirname(__FILE__) . '/inc/widgets.php';
 
@@ -26,6 +26,11 @@ require_once dirname(__FILE__) . '/inc/queries.php';
 * Carga campos personalizados
 */
 require_once dirname(__FILE__) . '/inc/custom-fields.php';
+
+/*
+* opciones del theme
+*/
+require_once dirname(__FILE__) . '/inc/opciones.php';
 
 
 /*
