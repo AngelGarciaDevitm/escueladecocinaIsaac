@@ -29,7 +29,33 @@ class Foo_Widget extends WP_Widget {
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
-		echo esc_html__( 'Hello, World!', 'text_domain' );
+
+		if ( ! empty( $instance['title'] ) ) {
+			$cantidad = $instance['cantidad'];
+		}
+
+		$args = array(
+			'post_type'     => 'clases_cocina',
+			'posts_per_page' => $cantidad
+		);
+		$cursos = new WP_Query($args);
+		while($cursos->have_posts()): $cursos->the_post();
+		?>
+			<div class="card mb-4">
+				<?php the_post_thumbnail( 'mediano', array('class' => 'img-fluid')); ?> 
+				<div class="card-body">
+					<h3 class="card-title"><?php the_title(); ?></h3>
+					<p class="card-subtitle m-0">
+						<?php echo get_post_meta(get_the_ID(), 'edc_cursos_subtitulo', true); ?>
+					</p>
+				</div>
+				<div class="card-footer">
+					<a href="<?php the_permalink(); ?>">Más informacion</a>
+				</div>
+			</div>
+
+		<?php
+		endwhile; wp_reset_postdata();
 		echo $args['after_widget'];
 	}
 
@@ -41,12 +67,31 @@ class Foo_Widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'New title', 'text_domain' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Titulo para Widget', 'text_domain' );
+		
+		$cantidad = ! empty( $instance['cantidad'] ) ? $instance['cantidad'] : 
+				esc_html__( '¿Cuantos cursos deseas mostrar?', 'text_domain' );
 		?>
 		<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'text_domain' ); ?></label> 
-		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
+				<?php esc_attr_e( 'Title:', 'text_domain' ); ?>
+			</label> 
+			<input class="widefat" 
+				id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" 
+				name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" 
+				type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
+		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'cantidad' ) ); ?>">
+				<?php esc_attr_e( '¿Cuantos cursos deseas mostrar?', 'text_domain' ); ?>
+			</label> 
+			<input class="widefat" 
+				id="<?php echo esc_attr( $this->get_field_id( 'cantidad' ) ); ?>" 
+				name="<?php echo esc_attr( $this->get_field_name( 'cantidad' ) ); ?>" 
+				type="number" value="<?php echo esc_attr( $cantidad ); ?>">
+		</p>
+
+
 		<?php 
 	}
 
@@ -62,7 +107,8 @@ class Foo_Widget extends WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';		
+		$instance['cantidad'] = ( ! empty( $new_instance['cantidad'] ) ) ? sanitize_text_field( $new_instance['cantidad'] ) : '';
 
 		return $instance;
 	}
