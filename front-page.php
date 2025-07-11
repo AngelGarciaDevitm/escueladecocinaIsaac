@@ -47,8 +47,9 @@
             <div class="row">
                 <?php 
                 $opciones = get_option('edc_theme_options');
-                if(isset($opciones['numero_clases'])) {
-                    $clases = (int) $opciones['numero_clases'];
+                
+                if(isset($opciones['numeros_clases'])) {
+                    $clases = (int) $opciones['numeros_clases'];
                 } else {
                     $clases = 3;
                 }

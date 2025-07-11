@@ -67,69 +67,91 @@ function edc_opciones_theme() {
 	) );
 }
 
-add_action('wp_footer', 'edc_estilos_opciones');
-function edc_estilos_opciones() {
-    $opciones = get_option('edc_theme_options');
+/* Dinamic Colors and dividers images */
+add_action('wp_footer', 'edc_theme_options_styles');
+function edc_theme_options_styles(){
+	$options = get_option('edc_theme_options');
 
-    $color_primario = $opciones['color_primario'];
-    $color_secundario = $opciones['color_secundario'];
-    $separador = $opciones['separador'];
+	$primaryColor = $options['color_primario'];
+	//$primaryColorHover = $options['primary_color_hover'];
+	$secondaryColor = $options['color_secundario'];
+	$dividerImage = $options['separador'];
+	//$negativeDividerImage = $options['negative_divider_image'];
 
-    if(!isset($separador)) {
-        $separador = get_template_directory_uri() . '/img/separador.png';
-    }
+	/* If the user haven't changed the divider image, the template will use the default divider image */
+	if(!isset($dividerImage)){
+		$dividerImage = get_template_directory_uri() . '/img/separador.png';
+	}
 
-    wp_register_style('custom-opciones', false);
-    wp_enqueue_style('opciones');
+	if(!isset($primaryColor)){
+		$primaryColor = "#f46669";
+	}
+	
+	if(!isset($secondaryColor)){
+		$secondaryColor = "#a1a045";
+	}
 
-    $custom_css = "
-        /** Bg color primario **/
-        .btn-primary,
-        .bg-primary,
-        .alert-primary,
-        .list-group-item-primary,
-        .comment-respond .submit,
-        .page-link:hover {
-            background-color: {$color_primario}!important;
-        }
-            
-        /** Color primario **/
+	/* Registering the new inline styles */
+	wp_register_style('custom-theme-options', false);
+	wp_enqueue_style('custom-theme-options');
 
-        .card-subtitle,
-        .nav-link:hover,
-        .current_page_item .nav-link,
-        .contenido-entrada .meta span,
-        .entrada a,
-        .instructor,
-        .comment-respond a,
-        .comentarios-cerrados,
-        .page-link {
-            color: {$color_primario}!important;
-        }
-        
-        /** border  primario **/
-        .current_page_item .nav-link,
-        blockquote.subtitulo,
-        .btn-primary,
-        footer {
-            border-color: {$color_primario}!important;
-        }
+	$customCss = "
+		/* BG Primary color */
+		.btn-primary,
+		.bg-primary,
+		.list-group-item-primary,
+		.comment-respond .submit,
+		.page-link:hover {
+			background-color: {$primaryColor}!important;
+		}
+		/* BG Secondary color */
+		.bg-secondary,
+		.badge-secondary,
+		.list-group-item-secondary,
+		aside .card-footer {
+			background-color: {$secondaryColor}!important;
+		}
+		/* Primary Color */
+		.header .nav-link:hover,
+		.header .current_page_item .nav-link,
+		aside .card-subtitle,
+		.post-preview a,
+		.post-content .post-meta span,
+		.comment-respond a,
+		.comment-list .comment-body .reply a,
+		.card-subtitle,
+		.instructor,
+		.page-link,
+		.page-item a,
+		.footer .nav-link:hover,
+		.footer .nav-link.active {
+			color: {$primaryColor}!important;
+		}
+		/* Border bottom colors */
+		.header .current_page_item .nav-link {
+			border-bottom: 2px solid {$primaryColor}!important;
+		}
+		.footer {
+			border-bottom: 10px solid {$primaryColor}!important;
+		}
+		/* Border top colors */
+		.footer .container {
+			border-top: 1px solid {$primaryColor}!important;
+		}
+		/* Border left colors */
+		blockquote.subtitle {
+			border-left: 2px solid {$primaryColor}!important;
+		}
+		/* Border color */
+		.btn-primary {
+			border-color: {$primaryColor}!important;
+		}
+		
+		/* Divider Images */
+		.separador::after{
+			background-image: url({$dividerImage})!important;
+		}
 
-        aside .card_meta,
-        .badge-secondary,
-        .bg-secondary,
-        .alert-secondary,
-        .list-group-item-secondary,
-        aside .card-footer,
-        .comment-body  {
-            background-color: {$color_secundario} !important;
-        }
-        
-        /*** Separador **/
-        .separador::after {
-            background-image: url( {$separador} ) !important;
-        }
-    ";
-
-    wp_add_inline_style('custom-opciones', $custom_css);
+	";
+	wp_add_inline_style('custom-theme-options',  $customCss);
 }
