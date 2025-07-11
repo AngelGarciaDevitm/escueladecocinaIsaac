@@ -45,7 +45,15 @@
 
         <div class="container">
             <div class="row">
-                <?php edc_query_cursos(3); ?>
+                <?php 
+                $opciones = get_option('edc_theme_options');
+                if(isset($opciones['numero_clases'])) {
+                    $clases = (int) $opciones['numero_clases'];
+                } else {
+                    $clases = 3;
+                }
+                
+                edc_query_cursos($clases); ?>
             </div>
             <div class="row justify-content-end">
                 <div class="col-sm-5 col-md-3">

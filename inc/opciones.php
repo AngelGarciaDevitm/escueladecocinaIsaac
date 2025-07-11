@@ -46,17 +46,24 @@ function edc_opciones_theme() {
 	) );
 
     $cmb_options->add_field( array(
-		'name'    => esc_html__( 'Logotipo' ),
+		'name'    => esc_html__( 'Logotipo', 'cmb2'),
 		'desc'    => esc_html__( 'Cargue una imagen para el logotipo', 'cmb2' ),
 		'id'      => 'logotipo',
 		'type'    => 'file',
 	) );
 
     $cmb_options->add_field( array(
-		'name'    => esc_html__( 'Separador' ),
+		'name'    => esc_html__( 'Separador', 'cmb2'),
 		'desc'    => esc_html__( 'Cargue una imagen para el separador', 'cmb2' ),
 		'id'      => 'separador',
 		'type'    => 'file',
+	) );
+
+    $cmb_options->add_field( array(
+		'name'    => esc_html__( 'Clases para Mostrar en la pagina Principal','cmb2'),
+		'desc'    => esc_html__( 'Añada una cantidad de imagenes para mostrar en la pagina principal', 'cmb2' ),
+		'id'      => 'numeros_clases',
+		'type'    => 'text',
 	) );
 }
 
